@@ -1,0 +1,11 @@
+{% extends "crud/base.html" %}
+{% block title %}{{ item.title }}{% endblock %}
+{% block content %}
+<h1>{{ item.title }}</h1>
+<p>{{ item.description }}</p>
+<p>
+  <a class="btn" href="{% url 'crud:update' item.pk %}">Изменить</a>
+  <a class="btn" href="{% url 'crud:delete' item.pk %}">Удалить</a>
+  <a class="btn" href="{% url 'crud:list' %}">Назад</a>
+</p>
+{% endblock %}

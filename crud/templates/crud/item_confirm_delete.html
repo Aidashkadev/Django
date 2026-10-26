@@ -1,0 +1,10 @@
+{% extends "crud/base.html" %}
+{% block title %}Удаление{% endblock %}
+{% block content %}
+<h1>Удалить «{{ object.title }}»?</h1>
+<form method="post">
+  {% csrf_token %}
+  <button type="submit">Да, удалить</button>
+  <a class="btn" href="{% url 'crud:list' %}">Отмена</a>
+</form>
+{% endblock %}
